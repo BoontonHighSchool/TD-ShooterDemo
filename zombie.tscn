@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjlwl1crf0gor"]
+
+[ext_resource type="Script" path="res://zombie.gd" id="1_6kb37"]
+[ext_resource type="Texture2D" uid="uid://do6k4edqiitj7" path="res://PNG/Default (64px)/Characters/red_character.png" id="2_rj31w"]
+[ext_resource type="Texture2D" uid="uid://cfd3fpdw4xgrm" path="res://PNG/Default (64px)/Characters/red_hand.png" id="3_bjhdj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yh40i"]
+radius = 27.0
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_6kb37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yh40i")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+
+[node name="RedCharacter" type="Sprite2D" parent="."]
+texture = ExtResource("2_rj31w")
+
+[node name="RedHand" type="Sprite2D" parent="."]
+position = Vector2(31, 19)
+texture = ExtResource("3_bjhdj")
+
+[node name="RedHand2" type="Sprite2D" parent="."]
+position = Vector2(31, -20)
+scale = Vector2(1, -1)
+texture = ExtResource("3_bjhdj")
